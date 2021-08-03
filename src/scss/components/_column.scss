@@ -1,0 +1,25 @@
+.vira-board-col {
+  position: relative;
+  float: left;
+  width: 320px;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 20px 10px;
+  border: 1px solid rgb(205, 205, 205);
+  background-color: #eaeaea;
+
+  &__header {
+    min-height: 40px;
+    border-bottom: 1px dashed #aaa;
+  }
+
+  &__add {
+    float: left;
+    cursor: pointer;
+  }
+
+  &__container {
+    padding-top: 20px;
+    min-height: 450px;
+  }
+}

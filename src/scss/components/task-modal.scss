@@ -1,0 +1,41 @@
+.task-modal {
+  position: fixed;
+  display: none;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: $task-modal-index;
+
+  &__container {
+    background-color: #fff;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 320px;
+    border-radius: 12px;
+    transform: translateY(20vh);
+    z-index: $task-modal-container-index;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  &__textarea {
+    min-width: 100%;
+    margin-bottom: 15px;
+    resize: vertical;
+    min-height: 95px;
+  }
+
+  .control {
+    margin: 20px 0;
+
+    > input {
+      width: 100%;
+    }
+  }
+}

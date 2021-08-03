@@ -1,0 +1,22 @@
+.vira-board-task {
+  background-color: rgb(255, 255, 255);
+  margin-top: 15px;
+  padding: 8px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 7px;
+  cursor: all-scroll;
+  user-select: none;
+
+  &__title {
+    text-align: center;
+    line-height: 2rem;
+    margin-bottom: 10px;
+  }
+
+  &__description {
+    word-wrap: break-word;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}

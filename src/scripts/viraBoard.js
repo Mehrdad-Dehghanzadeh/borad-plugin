@@ -1,21 +1,26 @@
-(function ($, window) {
+import { initialColumns } from './lib/_columns';
+import { initialTaskModal } from './lib/_taskModal';
+import { initialTasks } from './lib/_tasks';
+
+(function ($) {
   let pluginName = 'viraBoard';
 
   let defaults = {
-    maxColumn: 5,
-    minColumn: 1,
     direction: 'row', // accept row / column
+    titles: [], // titles of column board is required
   };
 
   const ViraBoard = function (element, options) {
-    this.wrapper = element;
+    this.element = element;
     this.settings = $.extend(defaults, options);
     this.init();
   };
 
   $.extend(ViraBoard.prototype, {
     init: function () {
-      console.log(this.wrapper);
+      initialColumns(this);
+      initialTaskModal();
+      initialTasks(this);
     },
   });
 
@@ -43,7 +48,7 @@
     });
   };
   $[pluginName] = ViraBoard;
-})($, window);
+})($);
 
 // execute plugin for instance
 $('[data-plugin_board]').each(function () {

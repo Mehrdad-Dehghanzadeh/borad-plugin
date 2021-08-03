@@ -8,7 +8,18 @@
   </head>
 
   <body>
-    <div class="vira-board" data-plugin_board='{"maxColumn": 3}'></div>
+    <article
+      class="vira-board"
+      data-plugin_board='{"titles": ["در انتظار", "در حال انجام", "انجام شده"]}'
+    >
+      <section
+        class="vira-board-col"
+        data-plugin_board-tasks='[{"title": "1عنوان", "description": "توضیحات1"}, {"title": "2عنوان", "description": "توضیحات 2 "}]'
+      ></section>
+
+      <section class="vira-board-col" data-plugin_board-tasks="[]"></section>
+      <section class="vira-board-col"></section>
+    </article>
 
     <%= htmlWebpackPlugin.tags.bodyTags %>
     <script type="text/javascript">

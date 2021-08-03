@@ -1,1 +1,17 @@
+/***************************
+* Variables
+ **************************/
+@import 'variables/z-indexs';
+
+/***************************
+* Base
+ **************************/
 @import 'base/reset';
+
+/***************************
+* Components
+ **************************/
+@import 'components/vira-board';
+@import 'components/column';
+@import 'components/task-modal';
+@import 'components/tasks';
