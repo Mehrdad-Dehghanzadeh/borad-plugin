@@ -1,5 +1,5 @@
 import { addTask } from './_tasks';
-import { openModal, closeModal, validateTask, clearInputs } from './_taskModal';
+import { openModal, closeModal, validateTask } from './_task-modal';
 
 export function attachEvents(that) {
   // add Events For Modal

@@ -1,4 +1,4 @@
-import { closeModal, validateTask } from './_taskModal';
+import { closeModal, validateTask } from './_task-modal';
 
 export function initialTasks(that) {
   setTask(that);

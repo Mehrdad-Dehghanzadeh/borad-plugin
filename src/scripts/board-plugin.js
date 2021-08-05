@@ -1,24 +1,24 @@
 import { initialColumns } from './lib/_columns';
-import { initialTaskModal } from './lib/_taskModal';
+import { initialTaskModal } from './lib/_task-modal';
 import { initialTasks } from './lib/_tasks';
 import { attachEvents } from './lib/_events';
 
 (function ($) {
-  let pluginName = 'viraBoard';
+  let pluginName = 'board';
 
   let defaults = {
     direction: 'row', // accept row / column
     titles: [], // titles of column board is required
   };
 
-  const ViraBoard = function (element, options) {
+  const Board = function (element, options) {
     this.element = element;
     this.settings = $.extend(defaults, options);
     this.col = null;
     this.init();
   };
 
-  $.extend(ViraBoard.prototype, {
+  $.extend(Board.prototype, {
     init: function () {
       initialColumns(this);
       initialTaskModal();
@@ -32,10 +32,11 @@ import { attachEvents } from './lib/_events';
     return this.each(function () {
       let attrName = 'plugin_' + pluginName;
       let instance = $.data(this, attrName);
+      debugger;
 
       if (!instance) {
         if (options === undefined || typeof options === 'object') {
-          $.data(this, attrName, new ViraBoard($(this), options));
+          $.data(this, attrName, new Board($(this), options));
         } else {
           $.error("method '" + options + "' not attached.");
         }
@@ -51,11 +52,11 @@ import { attachEvents } from './lib/_events';
       }
     });
   };
-  $[pluginName] = ViraBoard;
+  $[pluginName] = Board;
 })($);
 
 // execute plugin for instance
 $('[data-plugin_board]').each(function () {
   let options = $(this).data('plugin_board');
-  $(this).viraBoard(options);
+  $(this).board(options);
 });

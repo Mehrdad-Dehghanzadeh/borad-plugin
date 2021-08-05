@@ -22,9 +22,9 @@ let config = {
     },
 
     entry: {
-        viraBoardPlugin: [
+        'board-plugin': [
             './scss/main.scss',
-            'viraBoard.js'
+            'board-plugin.js'
         ]
     },
 
@@ -127,7 +127,7 @@ module.exports = (env, { mode }) => {
 
         config.plugins.push(
             new MiniCssExtractPlugin({
-                filename: 'css/viraBoardPlugin.min.css',
+                filename: 'css/board-plugin.min.css',
             })
         );
 
