@@ -1,6 +1,7 @@
 import { initialColumns } from './lib/_columns';
 import { initialTaskModal } from './lib/_taskModal';
 import { initialTasks } from './lib/_tasks';
+import { attachEvents } from './lib/_events';
 
 (function ($) {
   let pluginName = 'viraBoard';
@@ -13,6 +14,7 @@ import { initialTasks } from './lib/_tasks';
   const ViraBoard = function (element, options) {
     this.element = element;
     this.settings = $.extend(defaults, options);
+    this.col = null;
     this.init();
   };
 
@@ -21,6 +23,8 @@ import { initialTasks } from './lib/_tasks';
       initialColumns(this);
       initialTaskModal();
       initialTasks(this);
+
+      attachEvents(this);
     },
   });
 

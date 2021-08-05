@@ -1,3 +1,5 @@
+import { closeModal, validateTask } from './_taskModal';
+
 export function initialTasks(that) {
   setTask(that);
 }
@@ -27,4 +29,11 @@ function templateTask(data) {
       '</p>' +
       '</section>'
   );
+}
+
+export function addTask(data, col) {
+  if (validateTask()) {
+    col.children('.vira-board-col__container').append(templateTask(data));
+    closeModal();
+  }
 }

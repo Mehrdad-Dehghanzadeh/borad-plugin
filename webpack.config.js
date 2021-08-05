@@ -85,7 +85,6 @@ let config = {
 }
 
 module.exports = (env, { mode }) => {
-    debugger
     if (mode === "development") {
         config.stats = 'minimal';
 
