@@ -29,13 +29,15 @@ import { attachEvents } from './lib/_events';
   });
 
   $.fn[pluginName] = function (options) {
-    return this.each(function () {
+    return $(this).each(function () {
       let attrName = 'plugin_' + pluginName;
       let instance = $.data(this, attrName);
-      debugger;
+      let optionsData = $(this).data(attrName);
 
       if (!instance) {
-        if (options === undefined || typeof options === 'object') {
+        if (options === undefined && optionsData) {
+          $.data(this, attrName, new Board($(this), optionsData));
+        } else if (options === undefined || typeof options === 'object') {
           $.data(this, attrName, new Board($(this), options));
         } else {
           $.error("method '" + options + "' not attached.");
@@ -56,7 +58,4 @@ import { attachEvents } from './lib/_events';
 })($);
 
 // execute plugin for instance
-$('[data-plugin_board]').each(function () {
-  let options = $(this).data('plugin_board');
-  $(this).board(options);
-});
+$('.vira-board').board();
