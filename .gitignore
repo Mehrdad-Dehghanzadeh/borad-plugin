@@ -216,3 +216,4 @@ web_modules/
 .yarn/build-state.yml
 .pnp.*
 
+package-lock.json
